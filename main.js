@@ -1,3 +1,4 @@
+// Task 2: Fetch Products from the API Using Fetch and Promises
 function fetchProducts() {
     fetch('https://www.course-api.com/javascript-store-products')
         .then(response => {
@@ -13,3 +14,4 @@ function fetchProducts() {
             document.getElementById('product-container').innerHTML = '<p>Error loading products. Please try again later.</p>';
         });
 }
+
