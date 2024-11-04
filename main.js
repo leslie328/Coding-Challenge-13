@@ -5,14 +5,12 @@ function fetchProducts() {
             
             if (!response.ok) {
                 throw new Error('Network response was not ok: ') 
+                return response.json();
             } })
         .then(data => {
             displayProducts(data); 
         })
-        .catch(error => {
-            console.error('Error fetching products:', error);
-            document.getElementById('product-container').innerHTML = '<p>Error loading products. Please try again later.</p>';
-        });
+        
 }
 
 // Task 3: Display Product Details Dynamically
@@ -32,3 +30,8 @@ function displayProducts(products) {
         
     });
 }
+// Task 4: Handle Errors Gracefully
+.catch(error => {
+    console.error('Error fetching products:', error);
+    document.getElementById('product-container').innerHTML = '<p style="color: red;">Failed to load products. Please try again later.</p>';
+});
