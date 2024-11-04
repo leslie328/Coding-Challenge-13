@@ -15,3 +15,20 @@ function fetchProducts() {
         });
 }
 
+// Task 3: Display Product Details Dynamically
+function displayProducts(products) {
+    const container = document.getElementById('product container');
+    
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <h2>${product.name}</h2>
+            <h3>${product.company}</h3>
+            <h4>${product.price}</h4>
+        `;
+        
+    });
+}
